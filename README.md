@@ -2,6 +2,7 @@
 
 This is the submission for FIREQUEST Task 1
 
+Team Name: Ellite
 Team Members:
 Pragya Mittal (Leader)
 Komal
