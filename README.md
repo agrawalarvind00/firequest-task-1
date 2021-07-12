@@ -2,7 +2,7 @@
 
 This is the submission for FIREQUEST Task 1
 
-Team Members
+Team Members:
 Pragya Mittal (Leader)
 Komal
 Arvind Agrawal
