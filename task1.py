@@ -3,29 +3,36 @@ import urllib.request, urllib.parse, urllib.error
 import json
 import pandas as pd
 
-#receiving data from API
 url = 'https://samples.openweathermap.org/data/2.5/forecast/hourly?q=London,us&appid=b6907d289e10d714a6e88b30761fae22'
-uh = urllib.request.urlopen(url)
-data = uh.read().decode()
-weather = json.loads(data)['list']
+
+#receiving data from API
+def get_data():
+    uh = urllib.request.urlopen(url)
+    data = uh.read().decode()
+    weather = json.loads(data)['list']
+    return weather
 
 #Processing and converting data in pandas DataFrane
-dates = []
-temp = []
-pressure = []
-wind_speed = []
-final = {}
-for day in weather:
-    temp.append(day['main']['temp'])
-    dates.append(day['dt_txt'])
-    pressure.append(day['main']['pressure'])
-    wind_speed.append(day['wind']['speed'])
-final['temp'] = temp
-final['wind_speed'] = wind_speed
-final['pressure'] = pressure
-df = pd.DataFrame(final, index=dates)
+def get_frame(weather):
+    dates = []
+    temp = []
+    pressure = []
+    wind_speed = []
+    final = {}
+    for day in weather:
+        temp.append(day['main']['temp'])
+        dates.append(day['dt_txt'])
+        pressure.append(day['main']['pressure'])
+        wind_speed.append(day['wind']['speed'])
+    final['temp'] = temp
+    final['wind_speed'] = wind_speed
+    final['pressure'] = pressure
+    df = pd.DataFrame(final, index=dates)
+    return df
 
 #User intection menu
+json_data = get_data()
+df = get_frame(json_data)
 status = True
 while status:
     print('Select from options below')
