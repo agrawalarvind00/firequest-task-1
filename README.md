@@ -5,8 +5,11 @@ This is the submission for FIREQUEST Task 1
 Team Name: Ellite
 
 Team Members:
+
 Pragya Mittal (Leader)
+
 Komal
+
 Arvind Agrawal
 
 ![task1](https://user-images.githubusercontent.com/72457682/125267828-c8ac6080-e324-11eb-80c7-2ff147200e6c.png)
